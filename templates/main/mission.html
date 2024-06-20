@@ -1,0 +1,225 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% load static %}
+<!-- Main container for the mission page content -->
+<div class="container my-5 mission-page">
+    <!-- Page title and introduction paragraph -->
+    <h1 class="text-center mb-4">The Mission of Lord Caitanya</h1>
+    <p class="lead text-center mb-5">A movement motivated by love, aiming to transform the world through the teachings and practices of Gaudiya Vaishnavism.</p>
+    
+    <!-- Introduction Section -->
+    <div class="mb-5">
+        <h2>Introduction</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Paragraphs introducing the Gaudiya Vaishnava mission -->
+                <p>
+                    The Gaudiya Vaishnava mission, inspired by Lord Caitanya Mahaprabhu, is dedicated to spreading the message of love and devotion to Krishna. This movement aims to awaken the spiritual consciousness of humanity and establish a world where love, peace, and harmony prevail. It draws upon the teachings of prominent acharyas such as Bhaktivinoda Thakura, Rupa Goswami, and Srila Prabhupada.
+                </p>
+                <p>
+                    The objective of this mission is to help individuals realize their true spiritual identity and develop a personal relationship with Krishna through devotional practices.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <!-- Image related to the mission -->
+                <img src="{% static 'img/life.jpg' %}" alt="Mission Image" class="img-fluid rounded shadow-sm">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Teachings of Lord Caitanya -->
+    <div class="mb-5">
+        <h2>Teachings of Lord Caitanya</h2>
+        <div class="row">
+            <!-- Card for 'Sankirtana' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Sankirtana (Congregational Chanting)</h3>
+                        <p><strong>Importance:</strong> Sankirtana is considered the yuga-dharma (the prescribed method for spiritual realization in the current age, Kali Yuga). It involves the congregational chanting of the holy names of Krishna, especially the Hare Krishna mantra.</p>
+                        <p><strong>Benefits:</strong> This practice purifies the heart, fosters unity among participants, and brings about spiritual awakening and inner joy.</p>
+                        <p><strong>Quotes:</strong> "In this age of Kali, the holy name of the Lord, the Hare Krishna mantra, is the incarnation of Lord Krishna. Simply by chanting the holy name, one associates with the Lord directly. Anyone who does this is certainly delivered." – Caitanya Caritamrita, Adi-lila 17.22</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Bhakti' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Bhakti (Devotion)</h3>
+                        <p><strong>Definition:</strong> Bhakti refers to pure, selfless devotion to Krishna. It is the highest goal of life and the means to attain eternal happiness and spiritual fulfillment.</p>
+                        <p><strong>Practices:</strong> Bhakti includes hearing about Krishna, chanting His names, remembering Him, serving His lotus feet, offering prayers, worshiping His deity form, serving Him personally, becoming His friend, and surrendering everything to Him.</p>
+                        <p><strong>Quotes:</strong> "Bhakti, or devotional service, means engaging all our senses in the service of the Lord, the Supreme Personality of Godhead, the master of all the senses. When the spirit soul renders service unto the Supreme, there are two side effects. One is freed from all material designations, and one’s senses are purified simply by being employed in the service of the Lord." – Bhakti-rasamrita-sindhu 1.1.12</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Compassion' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Compassion</h3>
+                        <p><strong>Principle:</strong> Compassion is a key aspect of Lord Caitanya's teachings. Devotees are encouraged to spread the message of love and devotion to all living beings, regardless of their background or status.</p>
+                        <p><strong>Application:</strong> This involves distributing prasadam (sanctified food), teaching the holy names, and engaging in various welfare activities to help others spiritually and materially.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contributions of Bhaktivinoda Thakura -->
+    <div class="mb-5">
+        <h2>Contributions of Bhaktivinoda Thakura</h2>
+        <div class="row">
+            <!-- Card for 'Literary Contributions' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Literary Contributions</h3>
+                        <p><strong>Works:</strong> Bhaktivinoda Thakura wrote numerous books that elucidate the philosophy and practice of Gaudiya Vaishnavism. Some of his notable works include "Jaiva Dharma," "Harinama Chintamani," and "Bhagavad Gita with Commentaries."</p>
+                        <p><strong>Impact:</strong> His writings have provided a clear understanding of the teachings of Lord Caitanya and have inspired countless individuals to take up the path of bhakti.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Nama Hatta' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Nama Hatta (Marketplace of the Holy Name)</h3>
+                        <p><strong>Concept:</strong> Bhaktivinoda Thakura established Nama Hatta to spread the chanting of the holy names far and wide. He envisioned a network of devotees engaging in sankirtana and spreading the teachings of Lord Caitanya.</p>
+                        <p><strong>Implementation:</strong> He set up centers where people could come together to chant, study sacred texts, and participate in devotional activities.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Holistic Education' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Holistic Education</h3>
+                        <p><strong>Belief:</strong> Bhaktivinoda Thakura emphasized the importance of both spiritual and material education for a balanced and fulfilling life.</p>
+                        <p><strong>Initiatives:</strong> He established schools and wrote extensively on the need for integrating spiritual principles into the education system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Teachings of Rupa Goswami -->
+    <div class="mb-5">
+        <h2>Teachings of Rupa Goswami</h2>
+        <div class="row">
+            <!-- Card for 'Raganuga Bhakti' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Raganuga Bhakti (Spontaneous Devotional Service)</h3>
+                        <p><strong>Definition:</strong> Raganuga bhakti is the practice of following in the footsteps of the eternal residents of Vrindavan, who serve Krishna with spontaneous love and devotion.</p>
+                        <p><strong>Stages:</strong> It involves internal meditation on the pastimes of Krishna and His associates, cultivating the same mood of devotion.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Vaidi Bhakti' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Vaidi Bhakti (Regulated Devotional Practices)</h3>
+                        <p><strong>Definition:</strong> Vaidi bhakti refers to devotional practices that are performed according to scriptural rules and regulations. It is the foundation upon which higher stages of devotion are built.</p>
+                        <p><strong>Practices:</strong> Includes activities such as hearing about Krishna, chanting His names, offering prayers, and worshiping His deity form.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Seva' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Seva (Selfless Service)</h3>
+                        <p><strong>Essence:</strong> Seva, or selfless service, is the heart of bhakti. It involves serving Krishna and His devotees without any desire for personal gain.</p>
+                        <p><strong>Application:</strong> This can be done through various forms of service, such as temple activities, prasadam distribution, and community outreach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Srila Prabhupada and ISKCON -->
+    <div class="mb-5">
+        <h2>Srila Prabhupada and ISKCON</h2>
+        <div class="row">
+            <!-- Card for 'Global Impact' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Global Impact</h3>
+                        <p><strong>Mission:</strong> Srila Prabhupada founded the International Society for Krishna Consciousness (ISKCON) with the mission of spreading the teachings of Lord Caitanya worldwide.</p>
+                        <p><strong>Growth:</strong> Under his guidance, ISKCON established over 100 temples, farm communities, and educational institutions globally.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Literary Work' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Literary Work</h3>
+                        <p><strong>Translations:</strong> Srila Prabhupada translated and commented on essential Vedic scriptures, making them accessible to a global audience. His major works include the "Bhagavad Gita As It Is," "Srimad Bhagavatam," and "Caitanya Caritamrita."</p>
+                        <p><strong>Dissemination:</strong> These books have been widely distributed and have inspired millions to take up the path of Krishna consciousness.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Community Building' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Community Building</h3>
+                        <p><strong>Temples and Farms:</strong> Established numerous temples and farm communities where people can live according to the principles of simple living and high thinking.</p>
+                        <p><strong>Educational Initiatives:</strong> Founded schools and colleges that integrate spiritual and material education.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- The Relevance of the Mission Today -->
+    <div class="mb-5">
+        <h2>The Relevance of the Mission Today</h2>
+        <div class="row">
+            <!-- Card for 'Mental Health' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Mental Health</h3>
+                        <p><strong>Issue:</strong> Modern society faces a mental health crisis due to stress, anxiety, and lack of purpose.</p>
+                        <p><strong>Solution:</strong> The practice of bhakti-yoga provides a sense of purpose, inner peace, and connection to the divine, helping individuals overcome mental health challenges.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Environmental Sustainability' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Environmental Sustainability</h3>
+                        <p><strong>Issue:</strong> Environmental degradation due to unsustainable practices and overconsumption.</p>
+                        <p><strong>Solution:</strong> Gaudiya Vaishnavism advocates for simple living and respect for nature. Practices such as cow protection, organic farming, and minimizing waste align with this principle.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for 'Social Harmony' -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Social Harmony</h3>
+                        <p><strong>Issue:</strong> Societal divisions and conflicts based on race, religion, and economic status.</p>
+                        <p><strong>Solution:</strong> The mission promotes the concept of universal brotherhood and the understanding that all living beings are part of Krishna's creation, deserving respect and compassion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Conclusion -->
+    <div class="mb-5">
+        <h2>Conclusion</h2>
+        <p><strong>Call to Action:</strong> The Gaudiya Vaishnava mission encourages readers to join and experience its transformative power. By adopting the principles of love, devotion, and compassion, we can create a world where peace, harmony, and love prevail.</p>
+        <p><strong>Vision:</strong> To create a world where peace, harmony, and love prevail through the principles of Gaudiya Vaishnavism.</p>
+    </div>
+</div>
+{% endblock %}

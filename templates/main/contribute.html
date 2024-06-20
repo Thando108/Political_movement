@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+
+<div id="contribute-page" class="container my-5">
+    <!-- Main heading for the contribution page -->
+    <h1 class="text-center mb-4">Help fund our program</h1>
+    <p class="lead text-center mb-5">or see more options as to how you can contribute to the movement.</p>
+
+    <!-- Payment Contribution Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="h4">Make a Donation</h2>
+        </div>
+        <div class="card-body">
+            <!-- Donation form with POST method -->
+            <form method="post" action="/make-donation/" class="needs-validation" novalidate>
+                {% csrf_token %}  <!-- CSRF token for security -->
+                <!-- Form group for name input -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <!-- Form group for email input -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <!-- Form group for donation amount input -->
+                <div class="form-group">
+                    <label for="amount">Donation Amount</label>
+                    <input type="number" class="form-control" id="amount" name="amount" required>
+                    <div class="invalid-feedback">Please enter the donation amount.</div>
+                </div>
+                <!-- Submit button for the donation form -->
+                <button type="submit" class="btn btn-primary btn-block">Donate Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Participation Options Section -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h4">Participate in Our Activities</h2>
+        </div>
+        <div class="card-body">
+            <!-- List of participation options -->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Join the Joyous Sankirtan Chanting Sessions</a>
+                <a href="#" class="list-group-item list-group-item-action">Prepare Nutritious Meals for Those in Need</a>
+                <a href="#" class="list-group-item list-group-item-action">Help Distribute Inspirational Books</a>
+                <a href="#" class="list-group-item list-group-item-action">Play Musical Instruments to Uplift Spirits</a>
+                <a href="#" class="list-group-item list-group-item-action">Organize Engaging and Festive Events</a>
+                <a href="#" class="list-group-item list-group-item-action">Host Devotees for Kirtan and Inspiring Discussions</a>
+                <a href="#" class="list-group-item list-group-item-action">Design and Create Merchandise for Our Community</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

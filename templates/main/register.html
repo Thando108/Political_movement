@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% load static %}
+<!-- Registration Form Container -->
+<div class="register-container">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Render the form fields as paragraphs -->
+        {{ form.as_p }}
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- Additional CSS Styling -->
+<style>
+.register-container {
+    max-width: 400px; /* Set a maximum width for the container */
+    margin: 50px auto; /* Center the container horizontally with some top margin */
+    padding: 20px; /* Add padding inside the container */
+    background-color: white; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+}
+
+/* Style the form elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the submit button */
+button.btn-primary {
+    align-self: center; /* Center the button horizontally */
+    padding: 10px 20px;
+    font-size: 16px;
+}
+</style>

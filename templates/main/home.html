@@ -1,0 +1,112 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% load static %}
+<div id="homepage" class="homepage">
+    <!-- Hero section with background image and main call-to-action -->
+    <div class="hero-section text-center d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-4 text-light">Welcome to the Sankirtan Movement</h1>
+        <p class="lead text-light">Join us in making a difference in the world!</p>
+        <a href="{% url 'main:register' %}" class="btn btn-primary btn-lg">Get Involved</a>
+    </div>
+
+    <!-- Container for the about section and other contents -->
+    <div class="container my-5">
+        <!-- About section with multiple cards -->
+        <div class="about-section">
+            <h2 class="text-center mb-5">About Us</h2>
+            <div class="row">
+                <!-- Card for 'Our Philosophy' -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{% static 'img/background2.jpg' %}" class="card-img-top" alt="Philosophy">
+                        <div class="card-body">
+                            <h5 class="card-title">Our Philosophy</h5>
+                            <p class="card-text">
+                                At the core of our movement is the devotion (bhakti) to God (Krishna). We hold that pure, loving devotion to Krishna is the highest goal of life, bringing profound joy and fulfillment.
+                                <span class="more-text" style="display: none;">This practice, known as sankirtan, purifies the heart and draws us closer to the divine.</span>
+                            </p>
+                            <a href="javascript:void(0);" class="read-more btn btn-link" onclick="toggleText(this)">...more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card for 'What We Do' -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{% static 'img/chaitanya.jpg' %}" class="card-img-top" alt="Chanting">
+                        <div class="card-body">
+                            <h5 class="card-title">What We Do</h5>
+                            <p class="card-text">
+                                Congregational Chanting (Sankirtan): We emphasize the communal chanting of the holy names of God, particularly the Hare Krishna mantra:
+                                <span class="more-text" style="display: none;">“Hare Krishna, Hare Krishna, Krishna Krishna, Hare Hare / Hare Rama, Hare Rama, Rama Rama, Hare Hare.”</span>
+                            </p>
+                            <a href="javascript:void(0);" class="read-more btn btn-link" onclick="toggleText(this)">...more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card for 'Teachings of Lord Caitanya' -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{% static 'img/background.jpg' %}" class="card-img-top" alt="Teachings">
+                        <div class="card-body">
+                            <h5 class="card-title">Teachings of Lord Caitanya</h5>
+                            <p class="card-text">
+                                Lord Caitanya Mahaprabhu, revered as an incarnation of Krishna, devoted his life to spreading the practice of sankirtan and teaching the principles of love and devotion.
+                                <span class="more-text" style="display: none;">His life and teachings are preserved in sacred texts such as the Chaitanya Charitamrita and Chaitanya Bhagavata.</span>
+                            </p>
+                            <a href="javascript:void(0);" class="read-more btn btn-link" onclick="toggleText(this)">...more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Card for 'Our Activities' -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{% static 'img/krishna.jpg' %}" class="card-img-top" alt="Activities">
+                        <div class="card-body">
+                            <h5 class="card-title">Our Activities</h5>
+                            <p class="card-text">
+                                We gather in public spaces to sing and chant the Hare Krishna mantra, creating an uplifting and joyous atmosphere. We also celebrate various festivals.
+                                <span class="more-text" style="display: none;">Our followers engage in the study of sacred texts like the Bhagavad Gita and Srimad Bhagavatam, participating in discussions and lectures to deepen their spiritual understanding.</span>
+                            </p>
+                            <a href="javascript:void(0);" class="read-more btn btn-link" onclick="toggleText(this)">...more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card for 'Global Influence' -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{% static 'img/kunjabihari.jpg' %}" class="card-img-top" alt="Global Influence">
+                        <div class="card-body">
+                            <h5 class="card-title">Global Influence</h5>
+                            <p class="card-text">
+                                The Sankirtan Movement has a profound global impact, thanks largely to the efforts of the International Society for Krishna Consciousness (ISKCON).
+                                <span class="more-text" style="display: none;">ISKCON has established temples and communities worldwide, spreading the message of Lord Caitanya and the practice of sankirtan.</span>
+                            </p>
+                            <a href="javascript:void(0);" class="read-more btn btn-link" onclick="toggleText(this)">...more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join section with subscription form -->
+        <div class="join-section text-center py-5 bg-light rounded">
+            <h2 class="mb-4">Join Our Movement</h2>
+            <form class="join-form" action="{% url 'main:subscribe' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Join Now</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

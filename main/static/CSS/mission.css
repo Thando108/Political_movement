@@ -1,0 +1,62 @@
+/* Styles specific to the mission page. */
+.mission-page {
+    background-color: #f5f5f5;  /* Set the background color for the mission page. */
+    padding: 20px;  /* Add padding to the mission page. */
+}
+
+.mission-page h1, .mission-page h2, .mission-page h3 {
+    font-family: 'Merriweather', serif;  /* Set the font family for headings on the mission page. */
+    color: #2c3e50;  /* Set the color for headings on the mission page. */
+}
+
+.mission-page .card {
+    border: none;  /* Remove default border. */
+    margin-bottom: 1rem;  /* Add margin at the bottom of the card. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow to the card. */
+    transition: transform 0.3s ease;  /* Add a transition effect for transform property. */
+}
+
+.mission-page .card:hover {
+    transform: translateY(-5px);  /* Move the card up slightly on hover. */
+}
+
+.mission-page .card-body {
+    background-color: white;  /* Set the background color for the card body. */
+    border-radius: 5px;  /* Add rounded corners to the card body. */
+    padding: 20px;  /* Add padding to the card body. */
+    color: #34495e;  /* Set the text color for the card body. */
+}
+
+.mission-page .card-title {
+    color: #2c3e50;  /* Set the color for the card title. */
+    margin-bottom: 15px;  /* Add margin at the bottom of the card title. */
+}
+
+.mission-page .lead {
+    font-size: 1.25em;  /* Set the font size for lead text. */
+    font-weight: 300;  /* Set the font weight for lead text. */
+    color: #7f8c8d;  /* Set the color for lead text. */
+}
+
+.mission-page .btn-link {
+    color: #2c3e50;  /* Set the color for button links. */
+    text-decoration: none;  /* Remove underline from button links. */
+    font-size: 1.2em;  /* Set the font size for button links. */
+    display: block;  /* Display button links as block elements. */
+    width: 100%;  /* Set the width of button links to 100%. */
+    text-align: left;  /* Align text to the left within button links. */
+    padding: 15px 20px;  /* Add padding to button links. */
+}
+
+.mission-page .btn-link:hover {
+    background-color: #34495e;  /* Change background color on hover. */
+    color: white;  /* Change text color on hover. */
+}
+
+.mission-page img {
+    max-width: 100%;  /* Ensure images do not exceed the container width. */
+    height: auto;  /* Maintain the aspect ratio of images. */
+    border-radius: 5px;  /* Add rounded corners to images. */
+    margin-bottom: 15px;  /* Add margin at the bottom of images. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow to images. */
+}

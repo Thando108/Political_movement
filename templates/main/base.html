@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Join our political movement and make a difference. Learn about our mission, issues, and how to get involved.">
+    <meta name="keywords" content="political movement, join, mission, issues, contribute">
+    <meta name="author" content="Political Movement">
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="Political Movement">
+    <meta property="og:description" content="Join our political movement and make a difference. Learn about our mission, issues, and how to get involved.">
+    <meta property="og:image" content="{% static 'img/iskcon.png' %}">
+    <meta property="og:url" content="{% url 'main:home' %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- External CSS and Font Awesome for icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mission.css' %}">
+    <link rel="stylesheet" href="{% static 'css/issues.css' %}">
+    {% if request.path == '/contribute/' %}
+    <link rel="stylesheet" href="{% static 'css/contribute.css' %}">
+    {% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Title of the webpage -->
+    <title>Political Movement</title>
+    <!-- Internal CSS for navbar styling -->
+    <style>
+        .navbar {
+            background-color: #05223f;  /* Set background color for the navbar. */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add shadow to the navbar. */
+            font-size: 1.1em;  /* Set font size for the navbar text. */
+        }
+        .navbar .navbar-brand {
+            font-size: 1.5em;  /* Set font size for the brand name. */
+            font-weight: bold;  /* Make the brand name bold. */
+            color: #ffffff;  /* Set the color of the brand name text. */
+        }
+        .navbar .nav-link {
+            color: #f8f8f8;  /* Set the color of the navigation links. */
+            transition: color 0.3s;  /* Add transition effect to the color change. */
+        }
+        .navbar .nav-link:hover {
+            color: #e74c3c;  /* Change color of navigation links on hover. */
+        }
+        .navbar .nav-item .contribute {
+            background-color: #e74c3c;  /* Set background color for the contribute button. */
+            color: #ffffff !important;  /* Set text color for the contribute button. */
+            border-radius: 5px;  /* Add rounded corners to the contribute button. */
+            margin-left: 10px;  /* Add margin to the left of the contribute button. */
+            padding: 10px 15px;  /* Add padding inside the contribute button. */
+            transition: background-color 0.3s, transform 0.3s;  /* Add transition effects for background color and transform. */
+        }
+        .navbar .nav-item .contribute:hover {
+            background-color: #c0392b;  /* Change background color on hover. */
+            transform: scale(1.05);  /* Slightly increase size on hover. */
+        }
+        .navbar.fixed-top {
+            position: sticky;  /* Make the navbar sticky at the top. */
+            top: 0;  /* Stick the navbar to the top. */
+            width: 100%;  /* Set the width to 100% of the viewport. */
+            z-index: 1000;  /* Ensure the navbar stays on top of other elements. */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- Brand name/logo -->
+        <a class="navbar-brand" href="{% url 'main:home' %}">Sankirtan Movement</a>
+        <!-- Toggler/collapsible button for smaller screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible navigation menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <!-- Navigation links -->
+                <li class="nav-item"><a class="nav-link" href="{% url 'main:home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'main:mission' %}">Mission</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'main:issues' %}">Global Initiative</a></li>
+                <li class="nav-item"><a class="nav-link contribute" href="{% url 'main:contribute' %}">Contribute</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <!-- Logout form for authenticated users -->
+                <form method="post" action="{% url 'main:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link" style="padding: 0;">Logout</button>
+                </form>
+                {% else %}
+                    <!-- Login and Register links for unauthenticated users -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'main:login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'main:register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="container mt-5 pt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer section -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <!-- Copyright information -->
+                    <p class="mb-0">&copy; 2024 Sankirtan Movement. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Social media icons -->
+                    <div class="social-icons">
+                        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-cxgoJqC7Ug5mFzJ5Usi9wOvrK4snhM43PC5bPIKz8abUOAOhTZbJIE+eAmoa1F1K" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

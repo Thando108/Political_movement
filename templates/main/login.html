@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+<!-- Login container to center the form on the page -->
+<div class="login-container">
+    <!-- Heading for the login form -->
+    <h2>Login</h2>
+    <!-- Form for user login -->
+    <form method="post">
+        {% csrf_token %}  <!-- CSRF token for security -->
+        {{ form.as_p }}  <!-- Render the form fields as paragraphs -->
+        <!-- Submit button for the login form -->
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- Internal CSS for styling the login container -->
+<style>
+.login-container {
+    max-width: 400px;  /* Set the maximum width of the login container */
+    margin: 0 auto;  /* Center the login container horizontally */
+    padding: 20px;  /* Add padding inside the login container */
+    background-color: white;  /* Set the background color to white */
+    border-radius: 10px;  /* Add rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow around the container */
+}
+</style>

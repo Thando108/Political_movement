@@ -1,0 +1,47 @@
+/* Styles specific to the contribution page. */
+#contribute-page {
+    font-family: 'Roboto', sans-serif;  /* Set the font family for the entire contribution page. */
+}
+
+#contribute-page .container {
+    max-width: 800px;  /* Set a maximum width for the container. */
+    margin: 0 auto;  /* Center the container horizontally. */
+}
+
+#contribute-page h1, #contribute-page .h4 {
+    color: #05223f;  /* Set the color for the headings. */
+}
+
+#contribute-page .card-header {
+    background-color: #05223f;  /* Set the background color for the card header. */
+    color: #fff;  /* Set the text color for the card header. */
+    padding: 1rem;  /* Add padding to the card header. */
+}
+
+#contribute-page .card-body {
+    padding: 1.5rem;  /* Add padding to the card body. */
+}
+
+#contribute-page .form-group {
+    margin-bottom: 1.5rem;  /* Add margin below each form group. */
+}
+
+#contribute-page .btn-primary {
+    background-color: #e74c3c;  /* Set the background color for primary buttons. */
+    border-color: #e74c3c;  /* Set the border color for primary buttons. */
+    transition: background-color 0.3s, transform 0.3s;  /* Add transition effects for background color and transform. */
+}
+
+#contribute-page .btn-primary:hover {
+    background-color: #c0392b;  /* Change background color on hover. */
+    transform: scale(1.05);  /* Slightly increase the size on hover. */
+}
+
+#contribute-page .list-group-item {
+    transition: background-color 0.3s, transform 0.3s;  /* Add transition effects for background color and transform. */
+}
+
+#contribute-page .list-group-item:hover {
+    background-color: #f8f9fa;  /* Change background color on hover. */
+    transform: scale(1.02);  /* Slightly increase the size on hover. */
+}

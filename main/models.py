@@ -1,46 +1,82 @@
 from django.db import models
 from django.utils import timezone
 
-# Model representing an issue in the application
 class Issue(models.Model):
-    # Title of the issue
+    """
+    Model representing an issue in the application.
+
+    Attributes:
+        title (CharField): The title of the issue.
+        description (TextField): The description of the issue.
+        pub_date (DateTimeField): The publication date of the issue.
+    """
+
     title = models.CharField(max_length=200)
-    # Description of the issue
     description = models.TextField()
-    # Publication date of the issue
     pub_date = models.DateTimeField('date published')
 
-    # String representation of the Issue model
     def __str__(self):
+        """
+        Returns the string representation of the Issue model.
+
+        Returns:
+            str: The title of the issue.
+        """
         return self.title
 
-    # Method to check if the issue was published recently (within the last day)
     def was_published_recently(self):
+        """
+        Checks if the issue was published recently (within the last day).
+
+        Returns:
+            bool: True if the issue was published within the last day, False otherwise.
+        """
         now = timezone.now()
         return now - timezone.timedelta(days=1) <= self.pub_date <= now
 
-# Model representing a member in the application
 class Member(models.Model):
-    # Name of the member
+    """
+    Model representing a member in the application.
+
+    Attributes:
+        name (CharField): The name of the member.
+        email (EmailField): The email of the member (must be unique).
+        joined_date (DateTimeField): The date when the member joined (automatically set when the record is created).
+    """
+
     name = models.CharField(max_length=100)
-    # Email of the member (must be unique)
     email = models.EmailField(unique=True)
-    # Date when the member joined (automatically set when the record is created)
     joined_date = models.DateTimeField(auto_now_add=True)
 
-    # String representation of the Member model
     def __str__(self):
+        """
+        Returns the string representation of the Member model.
+
+        Returns:
+            str: The name of the member.
+        """
         return self.name
 
-# Model representing a contribution made by a member
 class Contribution(models.Model):
-    # Foreign key linking the contribution to a member
+    """
+    Model representing a contribution made by a member.
+
+    Attributes:
+        member (ForeignKey): A foreign key linking the contribution to a member.
+        amount (DecimalField): The amount of the contribution.
+        date (DateTimeField): The date when the contribution was made (automatically set when the record is created).
+    """
+
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    # Amount of the contribution
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    # Date when the contribution was made (automatically set when the record is created)
     date = models.DateTimeField(auto_now_add=True)
 
-    # String representation of the Contribution model
     def __str__(self):
+        """
+        Returns the string representation of the Contribution model.
+
+        Returns:
+            str: A string combining the member's name and the contribution amount.
+        """
         return f'{self.member.name} - {self.amount}'
+

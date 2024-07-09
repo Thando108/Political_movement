@@ -38,3 +38,4 @@ urlpatterns = [
     # URL pattern for the subscribe functionality, mapped to the subscribe view
     path('subscribe/', views.subscribe, name='subscribe'),
 ]
+

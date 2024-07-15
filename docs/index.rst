@@ -1,5 +1,5 @@
 .. Political Movement documentation master file, created by
-   sphinx-quickstart on Wed Jul  7 10:23:42 2021.
+   sphinx-quickstart on Mon Jul 15 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -10,7 +10,8 @@ Welcome to Political Movement's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   modules
+   source/main
+   source/modules
 
 Indices and tables
 ==================

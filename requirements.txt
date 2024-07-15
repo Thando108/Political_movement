@@ -32,6 +32,7 @@ mdurl==0.1.2
 murmurhash==1.0.10
 numpy==1.26.4
 packaging==23.2
+pillow==10.4.0
 platformdirs==4.2.2
 plotly==5.18.0
 pluggy==1.4.0
